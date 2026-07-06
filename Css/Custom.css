@@ -265,7 +265,7 @@
     width: 80px;
     height: 80px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 20%;
     display: block;
     border-radius: inherit;
 }
@@ -286,21 +286,25 @@
     }
 }
 
-/* ---- Mobile navbar: visible on all mobile/tablet screens ---- */
+/* ---- Mobile navbar: sticky top bar (no fixed-bottom issues) ---- */
 @media (max-width: 1023px) {
     .navbar {
-        position: fixed !important;
-        bottom: 0 !important;
+        position: sticky !important;
+        top: 0 !important;
+        bottom: auto !important;
         left: 0 !important;
         width: 100% !important;
         z-index: 9999 !important;
-        background: rgba(22, 22, 23, 0.97) !important;
-        border-top: 1px solid #383838;
-        padding-bottom: env(safe-area-inset-bottom); /* iPhone home-bar */
+        background: #1e1e1f !important;
+        border: 1px solid #383838 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6) !important;
+        margin-bottom: 15px !important;
     }
-    /* Add bottom spacing to the page so content isn't hidden under navbar */
+
+    /* Remove old bottom-padding compensation — no longer needed */
     main {
-        padding-bottom: 70px;
+        padding-bottom: 0 !important;
     }
 }
 
